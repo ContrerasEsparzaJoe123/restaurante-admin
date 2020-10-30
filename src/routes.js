@@ -23,14 +23,15 @@ import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserPage from "views/User.js";
+import AddRes from "components/create-student.component";
 import UpgradeToPro from "views/Upgrade.js";
 
 var routes = [
   {
-    path: "/dashboard",
+    path: "/create-student",
     name: "Home",
     icon: "nc-icon nc-bank",
-    component: Dashboard,
+    component: AddRes,
     layout: "/admin",
   },
   {
