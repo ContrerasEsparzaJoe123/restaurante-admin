@@ -27,6 +27,7 @@ import "assets/demo/demo.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.js";
+import EditStudent from "./components/edit-student.component";
 
 const hist = createBrowserHistory();
 
@@ -34,7 +35,10 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Redirect to="/admin/create-student" />
+
+      <Route path="/edit-student/:id" component={EditStudent} />
+
+      <Redirect to="/admin/student-list" />
     </Switch>
   </Router>,
   document.getElementById("root")

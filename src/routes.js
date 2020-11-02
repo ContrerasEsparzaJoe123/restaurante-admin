@@ -24,6 +24,8 @@ import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserPage from "views/User.js";
 import AddRes from "components/create-student.component";
+import listRes from "components/student-list.component";
+import editRes from "components/edit-student.component";
 import UpgradeToPro from "views/Upgrade.js";
 
 var routes = [
@@ -35,13 +37,19 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/tables",
+    path: "/student-list",
     name: "Table List",
     icon: "nc-icon nc-tile-56",
-    component: TableList,
+    component: listRes,
     layout: "/admin",
   },
-
+  {
+    path: "/edit-student/",
+    name: "User Profile",
+    icon: "nc-icon nc-single-02",
+    component: editRes,
+    layout: "/admin",
+  },
   {
     path: "/icons",
     name: "Icons",
@@ -63,13 +71,7 @@ var routes = [
     component: Notifications,
     layout: "/admin",
   },
-  {
-    path: "/user-page",
-    name: "User Profile",
-    icon: "nc-icon nc-single-02",
-    component: UserPage,
-    layout: "/admin",
-  },
+
   {
     path: "/typography",
     name: "Typography",

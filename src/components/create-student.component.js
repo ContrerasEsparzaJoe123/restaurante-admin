@@ -74,7 +74,7 @@ export default class CreateStudent extends Component {
                   <CardTitle tag="h5">Edit </CardTitle>
                 </CardHeader>
                 <CardBody>
-                  <Form>
+                  <Form onSubmit={this.onSubmit}>
                     {/*
 
                     <Row>
@@ -115,9 +115,10 @@ export default class CreateStudent extends Component {
                         <FormGroup>
                           <label>First Name</label>
                           <Input
-                            defaultValue="Chet"
-                            placeholder="Company"
+                            placeholder="Nombre"
                             type="text"
+                            value={this.state.name}
+                            onChange={this.onChangeStudentName}
                           />
                         </FormGroup>
                       </Col>
@@ -125,9 +126,10 @@ export default class CreateStudent extends Component {
                         <FormGroup>
                           <label>Last Name</label>
                           <Input
-                            defaultValue="Faker"
                             placeholder="Last Name"
                             type="text"
+                            value={this.state.email}
+                            onChange={this.onChangeStudentEmail}
                           />
                         </FormGroup>
                       </Col>
@@ -137,9 +139,10 @@ export default class CreateStudent extends Component {
                         <FormGroup>
                           <label>Address</label>
                           <Input
-                            defaultValue="Melbourne, Australia"
                             placeholder="Home Address"
                             type="text"
+                            value={this.state.rollno}
+                            onChange={this.onChangeStudentRollno}
                           />
                         </FormGroup>
                       </Col>
