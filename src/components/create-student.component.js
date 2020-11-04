@@ -19,37 +19,61 @@ export default class CreateStudent extends Component {
 
     // Setting up functions
     this.onChangeStudentName = this.onChangeStudentName.bind(this);
-    this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
-    this.onChangeStudentRollno = this.onChangeStudentRollno.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeDireccion = this.onChangeDireccion.bind(this);
+    this.onChangeCal = this.onChangeCal.bind(this);
+    this.onChangeHorario = this.onChangeHorario.bind(this);
+    this.onChangeLongitud = this.onChangeLongitud.bind(this);
+    this.onChangeLatitud = this.onChangeLatitud.bind(this);
+    this.onChangeDescripcion = this.onChangeDescripcion.bind(this);
 
+    this.onSubmit = this.onSubmit.bind(this);
     // Setting up state
     this.state = {
-      name: "",
-      email: "",
-      rollno: "",
+      nombre: "",
+      direccion: "",
+      calificacion: "",
+      horario: "",
+      longitud: "",
+      latitud: "",
+      descripcion: "",
     };
   }
 
   onChangeStudentName(e) {
-    this.setState({ name: e.target.value });
+    this.setState({ nombre: e.target.value });
   }
 
-  onChangeStudentEmail(e) {
-    this.setState({ email: e.target.value });
+  onChangeDireccion(e) {
+    this.setState({ direccion: e.target.value });
   }
 
-  onChangeStudentRollno(e) {
-    this.setState({ rollno: e.target.value });
+  onChangeCal(e) {
+    this.setState({ calificacion: e.target.value });
   }
 
+  onChangeHorario(e) {
+    this.setState({ horario: e.target.value });
+  }
+  onChangeLongitud(e) {
+    this.setState({ longitud: e.target.value });
+  }
+  onChangeLatitud(e) {
+    this.setState({ latitud: e.target.value });
+  }
+  onChangeDescripcion(e) {
+    this.setState({ descripcion: e.target.value });
+  }
   onSubmit(e) {
     e.preventDefault();
 
     const studentObject = {
-      name: this.state.name,
-      email: this.state.email,
-      rollno: this.state.rollno,
+      nombre: this.state.nombre,
+      direccion: this.state.direccion,
+      calificacion: this.state.calificacion,
+      horario: this.state.horario,
+      longitud: this.state.longitud,
+      latitud: this.state.latitud,
+      descripcion: this.state.descripcion,
     };
 
     axios
@@ -57,9 +81,13 @@ export default class CreateStudent extends Component {
       .then((res) => console.log(res.data));
 
     this.setState({
-      name: "",
-      email: "",
-      rollno: "",
+      nombre: "",
+      direccion: "",
+      calificacion: "",
+      horario: "",
+      longitud: "",
+      latitud: "",
+      descripcion: "",
     });
   }
 
@@ -71,7 +99,7 @@ export default class CreateStudent extends Component {
             <Col md="8">
               <Card className="card-user">
                 <CardHeader>
-                  <CardTitle tag="h5">Edit </CardTitle>
+                  <CardTitle tag="h5">Agregar Restaurantes </CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Form onSubmit={this.onSubmit}>
@@ -113,23 +141,23 @@ export default class CreateStudent extends Component {
                     <Row>
                       <Col className="pr-1" md="6">
                         <FormGroup>
-                          <label>First Name</label>
+                          <label>Nombre de Restaurante</label>
                           <Input
                             placeholder="Nombre"
                             type="text"
-                            value={this.state.name}
+                            value={this.state.nombre}
                             onChange={this.onChangeStudentName}
                           />
                         </FormGroup>
                       </Col>
                       <Col className="pl-1" md="6">
                         <FormGroup>
-                          <label>Last Name</label>
+                          <label>Calificacion de Restaurante</label>
                           <Input
-                            placeholder="Last Name"
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.onChangeStudentEmail}
+                            placeholder="Calificacion"
+                            type="number"
+                            value={this.state.calificacion}
+                            onChange={this.onChangeCal}
                           />
                         </FormGroup>
                       </Col>
@@ -137,12 +165,12 @@ export default class CreateStudent extends Component {
                     <Row>
                       <Col md="12">
                         <FormGroup>
-                          <label>Address</label>
+                          <label>Direccion</label>
                           <Input
-                            placeholder="Home Address"
+                            placeholder="Direccion"
                             type="text"
-                            value={this.state.rollno}
-                            onChange={this.onChangeStudentRollno}
+                            value={this.state.direccion}
+                            onChange={this.onChangeDireccion}
                           />
                         </FormGroup>
                       </Col>
@@ -150,38 +178,47 @@ export default class CreateStudent extends Component {
                     <Row>
                       <Col className="pr-1" md="4">
                         <FormGroup>
-                          <label>City</label>
+                          <label>Horario</label>
                           <Input
-                            defaultValue="Melbourne"
-                            placeholder="City"
+                            placeholder="8:00AM-7:00PM"
                             type="text"
+                            value={this.state.horario}
+                            onChange={this.onChangeHorario}
                           />
                         </FormGroup>
                       </Col>
                       <Col className="px-1" md="4">
                         <FormGroup>
-                          <label>Country</label>
+                          <label>Longitud</label>
                           <Input
-                            defaultValue="Australia"
-                            placeholder="Country"
-                            type="text"
+                            placeholder="Longitud"
+                            type="number"
+                            value={this.state.longitud}
+                            onChange={this.onChangeLongitud}
                           />
                         </FormGroup>
                       </Col>
                       <Col className="pl-1" md="4">
                         <FormGroup>
-                          <label>Postal Code</label>
-                          <Input placeholder="ZIP Code" type="number" />
+                          <label>Latitud</label>
+                          <Input
+                            placeholder="Latitud"
+                            type="number"
+                            value={this.state.latitud}
+                            onChange={this.onChangeLatitud}
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
                       <Col md="12">
                         <FormGroup>
-                          <label>About Me</label>
+                          <label>Descripcion</label>
                           <Input
                             type="textarea"
-                            defaultValue="Oh so, your weak rhyme You doubt I'll bother, reading into it"
+                            placeholder="Descirpcion del Restaurante"
+                            value={this.state.descripcion}
+                            onChange={this.onChangeDescripcion}
                           />
                         </FormGroup>
                       </Col>

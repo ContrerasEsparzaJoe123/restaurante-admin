@@ -31,32 +31,32 @@ import UpgradeToPro from "views/Upgrade.js";
 var routes = [
   {
     path: "/create-student",
-    name: "Home",
+    name: "Crear Un Restaurante",
     icon: "nc-icon nc-bank",
     component: AddRes,
     layout: "/admin",
   },
   {
     path: "/student-list",
-    name: "Table List",
+    name: "Lista de Restaurantes",
     icon: "nc-icon nc-tile-56",
     component: listRes,
     layout: "/admin",
   },
   {
-    path: "/edit-student/",
-    name: "User Profile",
+    path: "/lista-usuarios/",
+    name: "Usuarios",
     icon: "nc-icon nc-single-02",
-    component: editRes,
+    component: TableList,
     layout: "/admin",
   },
-  {
+  /*{
     path: "/icons",
     name: "Icons",
     icon: "nc-icon nc-diamond",
     component: Icons,
     layout: "/admin",
-  },
+  },*/
   {
     path: "/maps",
     name: "Maps",
@@ -72,6 +72,7 @@ var routes = [
     layout: "/admin",
   },
 
+  /*
   {
     path: "/typography",
     name: "Typography",
@@ -79,6 +80,7 @@ var routes = [
     component: Typography,
     layout: "/admin",
   },
+*/
   // {
   //   pro: true,
   //   path: "/upgrade",

@@ -182,9 +182,9 @@ class Header extends React.Component {
                   </p>
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem tag="a">Action</DropdownItem>
-                  <DropdownItem tag="a">Another Action</DropdownItem>
-                  <DropdownItem tag="a">Something else here</DropdownItem>
+                  <DropdownItem tag="a">Logout</DropdownItem>
+                  {/* <DropdownItem tag="a">Another Action</DropdownItem>
+                  <DropdownItem tag="a">Something else here</DropdownItem>*/}
                 </DropdownMenu>
               </Dropdown>
               {/*<NavItem>*/}

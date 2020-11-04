@@ -104,18 +104,20 @@ export default class StudentList extends Component {
             <Col md="12">
               <Card className="card-plain">
                 <CardHeader>
-                  <CardTitle tag="h4">Table on Plain Background</CardTitle>
-                  <p className="card-category">
-                    Here is a subtitle for this table
-                  </p>
+                  <CardTitle tag="h4">Tabla de Restaurantes</CardTitle>
+                  <p className="card-category">Restaurantes en Durango</p>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
                     <thead className="text-primary">
                       <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
+                        <th>Nombre</th>
+                        <th>Calificacion</th>
+                        <th>Direccion</th>
+                        <th>Horario</th>
+                        <th>Longitud</th>
+                        <th>Latitud</th>
+                        <th>Descripcion</th>
                         <th>Editar</th>
                         <th>Borrar</th>
                       </tr>
